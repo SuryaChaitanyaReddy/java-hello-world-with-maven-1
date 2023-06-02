@@ -16,7 +16,7 @@ pipeline {
         }
         stage('dockerbuild') {
             steps {
-                sh "docker build . -t SuryaChaitanyaReddy/javahello:${BUILD_NUMBER}"
+                sh "docker build . -t suryachaitanyareddy/javahello:${BUILD_NUMBER}"
             }
         }
         stage('dockerpush') {

@@ -10,20 +10,20 @@ pipeline {
         stage('Test') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/MANOHAR452/java-hello-world-with-maven-1.git'
-                sh "mvn clean package"
+                git 'https://github.com/SuryaChaitanyaReddy/java-hello-world-with-maven-1'
+                sh "mvn clean package"1.git
             }
         }
         stage('dockerbuild') {
             steps {
-                sh "docker build . -t manohar4524/javahello:${BUILD_NUMBER}"
+                sh "docker build . -t suryachaitanyareddy/javahello:${BUILD_NUMBER}"
             }
         }
         stage('dockerpush') {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'dockerregistry') {
-                        sh "docker push manohar4524/javahello:${BUILD_NUMBER}"
+                        sh "docker push suryachaitanyareddy/javahello:${BUILD_NUMBER}"
                     }
                 }      
             }    

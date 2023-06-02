@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/SuryaChaitanyaReddy/java-hello-world-with-maven-1'
-                sh "mvn clean package"1.git
+                sh "mvn clean package".git
             }
         }
         stage('dockerbuild') {
